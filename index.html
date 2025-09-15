@@ -89,6 +89,7 @@
             <button type="submit">Bejelentkezés</button>
         </form>
     </div>
+    <script src="login-anim.js"></script>
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -96,13 +97,13 @@
             const password = document.getElementById('password').value;
             const errorMsg = document.getElementById('errorMsg');
 
-            // Simple client-side check (replace with real authentication)
+            // Egyszerű kliens oldali ellenőrzés (cseréld le valódi autentikációra)
             if(username === "admin" && password === "password") {
                 errorMsg.textContent = "";
-                alert("Login successful!");
-                // Redirect or show logged-in content here
+                alert("Sikeres bejelentkezés!");
+                // Itt irányítsd át vagy jelenítsd meg a belépett tartalmat
             } else {
-                errorMsg.textContent = "Invalid username or password.";
+                errorMsg.textContent = "Hibás felhasználónév vagy jelszó.";
             }
         });
     </script>
