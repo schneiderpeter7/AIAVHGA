@@ -2,64 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login Page</title>
+    <title>Bejelentkezés</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            background: #f4f4f4; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .login-container {
             background: #fff;
-            padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            width: 300px;
+            padding: 2.5em 2em 2em 2em;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(60,64,67,0.15);
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .google-logo {
+            width: 48px;
+            margin-bottom: 1em;
         }
         .login-container h2 {
-            margin-bottom: 1em;
+            margin-bottom: 1.5em;
             text-align: center;
+            font-weight: 400;
+            color: #202124;
         }
         .login-container input[type="text"],
         .login-container input[type="password"] {
             width: 100%;
-            padding: 0.5em;
-            margin-bottom: 1em;
-            border: 1px solid #ccc;
+            padding: 0.75em;
+            margin-bottom: 1.2em;
+            border: 1px solid #dadce0;
             border-radius: 4px;
+            font-size: 1em;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            border-color: #4285f4;
         }
         .login-container button {
             width: 100%;
-            padding: 0.7em;
-            background: #0078d4;
+            padding: 0.8em;
+            background: #4285f4;
             color: #fff;
             border: none;
             border-radius: 4px;
-            font-size: 1em;
+            font-size: 1.05em;
+            font-weight: 500;
             cursor: pointer;
+            box-shadow: 0 1px 2px rgba(60,64,67,0.08);
+            transition: background 0.2s;
         }
         .login-container button:hover {
-            background: #005fa3;
+            background: #357ae8;
         }
         .error {
-            color: #d8000c;
+            color: #d93025;
             margin-bottom: 1em;
             text-align: center;
+            font-size: 0.98em;
+        }
+        @media (max-width: 400px) {
+            .login-container {
+                width: 95vw;
+                padding: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
+        <img class="google-logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" alt="Google logo">
+        <h2>Bejelentkezés</h2>
         <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
+            <input type="text" id="username" placeholder="Felhasználónév" required>
+            <input type="password" id="password" placeholder="Jelszó" required>
             <div class="error" id="errorMsg"></div>
-            <button type="submit">Login</button>
+            <button type="submit">Bejelentkezés</button>
         </form>
     </div>
     <script>
